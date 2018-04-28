@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import discord
 import asyncio
-import minecraftWrapper
+import botSrc.minecraftWrapper as minecraftWrapper
 import os
 
 # Pass the token as a enviromentvariable"
