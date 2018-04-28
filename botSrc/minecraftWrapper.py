@@ -14,11 +14,18 @@ class MinecraftWrapper:
     def __init__(self):
         self.runningMc = "not born yet"
         self.serverIsOn = False
+        """
+        DEFINE self.command and self.workpath so that this
+        program finds your server.jar
+        """
+        self.command = "java -Xmx1024M -Xms1024M -jar" +  \
+            " /home/vili/Applications/Minecraft/server/server.jar nogui"
+        self.workpath = "/home/vili/Applications/Minecraft/server/"
 
     async def execute(self, cmd, workdir):
         """
         Executes given command in given workpath asynchronously.
-        Yiels continuosly output as a string\n
+        Yields continuosly output as a string\n
         - :param cmd: Complete bash shell command string\n
         - :param workdir: Working directory for command\n
         - :type cmd: string\n
@@ -114,9 +121,8 @@ class MinecraftWrapper:
         server console output strings in a formatted form, also
         prints the unformatted form to console
         """
-        cmd = "java -Xmx1024M -Xms1024M -jar" +  \
-            " /home/vili/Applications/Minecraft/server/server.jar nogui"
-        cwd = "/home/vili/Applications/Minecraft/server/"
+        cmd = self.command
+        cwd = self.workpath
         async for line in self.execute(cmd, cwd):
             print(line)  # the raw unformatted data is for the host
             if self.isAValidMessage(line):

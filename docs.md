@@ -20,7 +20,7 @@ MinecraftWrapper.execute(self, cmd, workdir)
 ```
 
 Executes given command in given workpath asynchronously.
-Yiels continuosly output as a string
+Yields continuosly output as a string
 
 - :param cmd: Complete bash shell command string
 

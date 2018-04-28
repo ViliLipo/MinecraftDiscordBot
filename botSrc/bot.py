@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+import sys
+sys.path.append("./")
 import discord
 import asyncio
-import botSrc.minecraftWrapper as minecraftWrapper
+from botSrc import minecraftWrapper
 import os
 
 # Pass the token as a enviromentvariable"
