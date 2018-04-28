@@ -73,9 +73,13 @@ MinecraftWrapper.formatLine(self, line)
 ```
 
 Cuts unwanted parts from given line.
+
 :param line: Line to be formatted
+
 :type line: string
+
 :returns string:
+
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.minecraft">minecraft</h3>
 
