@@ -4,10 +4,13 @@ The class is used to run minecraft-server as a subprocess.
 """
 
 # !/usr/bin/python3
+import sys
+sys.path.append("./")
 import subprocess
 import asyncio
 import sys
 import select
+from botSrc.configmanager import ConfigManager
 
 
 class MinecraftWrapper:
@@ -23,10 +26,9 @@ class MinecraftWrapper:
         """
         self.runningMc = "not born yet"
         self.serverIsOn = False
-
-        self.command = "java -Xmx1024M -Xms1024M -jar" +  \
-            " /home/vili/Applications/Minecraft/server/server.jar nogui"
-        self.workpath = "/home/vili/Applications/Minecraft/server/"
+        cfgman = ConfigManager()
+        self.command = cfgman.getLaunchCommand()
+        self.workpath = cfgman.getWorkPath()
 
     async def execute(self, cmd, workdir):
         """
@@ -70,7 +72,7 @@ class MinecraftWrapper:
         """
         line = '/say <{0:1}>{1:1}\n'.format(name, message)
         print(line)
-        print(self.runningMc)
+        # print(self.runningMc)
         self.runningMc.stdin.write(line.encode('utf-8'))
         #  self.runnigMc.stdin.flush()
         await asyncio.sleep(0)

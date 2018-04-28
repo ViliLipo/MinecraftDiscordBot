@@ -8,12 +8,14 @@ sys.path.append("./")
 import discord
 import asyncio
 from botSrc import minecraftWrapper
+from botSrc.configmanager import ConfigManager
 import os
 
 # Pass the token as a enviromentvariable"
 client = discord.Client()
 waitTime = 15
 mc = minecraftWrapper.MinecraftWrapper()
+cfgman = ConfigManager()
 
 
 @client.event
@@ -67,4 +69,4 @@ if __name__ == '__main__':
     On *nix systems use $ export MINECRAFTTOKEN=<"yourtoken">
     to set it. then discord.client.run(token) is called
     """
-    client.run(os.environ['MINECRAFTTOKEN'])
+    client.run(cfgman.getToken())

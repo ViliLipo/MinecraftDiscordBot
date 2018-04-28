@@ -1,0 +1,3 @@
+TOKEN=NDM5NzE1OTY3ODc5MzQ4MjM2.DcXNww.IMrEWRTPPA7za_7cEr4__0BQWA4
+LAUNCHCMD=java -Xmx1024M -Xms1024M -jar /home/vili/Applications/Minecraft/server/server.jar nogui
+CWD=/home/vili/Applications/Minecraft/server

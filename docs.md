@@ -164,3 +164,56 @@ minecraftFunction()
 Find channel called minecraft and starts to feed server output
 there.
 
+<h1 id="botSrc.configmanager">botSrc.configmanager</h1>
+
+Module contains ConfigManager class
+<h2 id="botSrc.configmanager.ConfigManager">ConfigManager</h2>
+
+```python
+ConfigManager(self)
+```
+
+Read config file in applications directory.
+Stores configuration in a dictionary
+
+format for config file :<br />
+TOKEN=YOURTOKEN <br />
+LAUNCHCMD=COMMAND TO LAUNCH THE SERVER <br />
+CWD=PATH TO THE SERVER FOLDER <br />
+Place the file named config to the project root folder.
+The launch command must contain path to the server.jar file.
+
+<h3 id="botSrc.configmanager.ConfigManager.readFile">readFile</h3>
+
+```python
+ConfigManager.readFile(self)
+```
+
+Read file to array of strings
+
+returns: string[]
+
+<h3 id="botSrc.configmanager.ConfigManager.createConfig">createConfig</h3>
+
+```python
+ConfigManager.createConfig(self)
+```
+Create dictionary of the configuration
+<h3 id="botSrc.configmanager.ConfigManager.getToken">getToken</h3>
+
+```python
+ConfigManager.getToken(self)
+```
+Return value of token from dictionary
+<h3 id="botSrc.configmanager.ConfigManager.getWorkPath">getWorkPath</h3>
+
+```python
+ConfigManager.getWorkPath(self)
+```
+Return value of work path from dictionary
+<h3 id="botSrc.configmanager.ConfigManager.getLaunchCommand">getLaunchCommand</h3>
+
+```python
+ConfigManager.getLaunchCommand(self)
+```
+Return value of launch commmand from dictionary
