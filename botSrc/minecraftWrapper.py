@@ -19,11 +19,11 @@ class MinecraftWrapper:
     async def execute(self, cmd, workdir):
         """
         Executes given command in given workpath asynchronously.
-        Yiels continuosly output as a string
-        :param cmd: Complete bash shell command string
-        :param workdir: Working directory for command
-        :type cmd: string
-        :type workdir: string
+        Yiels continuosly output as a string\n
+        -:param cmd: Complete bash shell command string\n
+        -:param workdir: Working directory for command\n
+        -:type cmd: string\n
+        -:type workdir: string\n
         """
         if self.serverIsOn:
             return
@@ -49,12 +49,12 @@ class MinecraftWrapper:
     async def say(self, name, message):
         """
         Passes "say" command to minecraftserver with given message
-        and inserts the senders username to the message
+        and inserts the senders username to the message\n
 
-        :param name: Name of the sender
-        :param message: Message to be sent
-        :type name: string
-        :type message: string
+        -:param name: Name of the sender\n
+        -:param message: Message to be sent\n
+        -:type name: string \n
+        -:type message: string\n
         """
         line = '/say <{0:1}>{1:1}\n'.format(name, message)
         print(line)
@@ -68,10 +68,10 @@ class MinecraftWrapper:
         Passses command given in parameters straight to the minecraftserver.
         ATTENTION the server naturally has OP-level access to the commandline.
         if "say" command is used the MinecraftWrapper.say(self, name ,message)
-        method is used to insert Username to message
+        method is used to insert Username to message\n
 
-        :param name: Username of the command issuer
-        :param command: Command to be issued
+        -:param name: Username of the command issuer \n
+        -:param command: Command to be issued \n
         """
         if "say" in command:
             command = command.replace('say', '', 1)
@@ -83,10 +83,10 @@ class MinecraftWrapper:
 
     def isAValidMessage(self, line):
             """
-            Checks given line for expressions that are not for public
-            :param line: Line to be checked
-            :type line: string
-            :returns: boolean
+            Checks given line for expressions that are not for public\n
+            -:param line: Line to be checked\n
+            -:type line: string\n
+            -:returns: boolean
             """
             value = True
             if ("[User Authenticator" in line
@@ -98,10 +98,10 @@ class MinecraftWrapper:
 
     def formatLine(self, line):
         """
-        Cuts unwanted parts from given line.
-        :param line: Line to be formatted
-        :type line: string
-        :returns string:
+        Cuts unwanted parts from given line. \n
+        -:param line: Line to be formatted \n
+        -:type line: string \n
+        -:returns string: \n
         """
         line = line.split("] ", 1)[1]
         line = line.replace("[Server]", '', 1)

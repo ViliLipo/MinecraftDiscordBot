@@ -22,10 +22,15 @@ MinecraftWrapper.execute(self, cmd, workdir)
 
 Executes given command in given workpath asynchronously.
 Yiels continuosly output as a string
-:param cmd: Complete bash shell command string
-:param workdir: Working directory for command
-:type cmd: string
-:type workdir: string
+
+-:param cmd: Complete bash shell command string
+
+-:param workdir: Working directory for command
+
+-:type cmd: string
+
+-:type workdir: string
+
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.say">say</h3>
 
@@ -36,10 +41,15 @@ MinecraftWrapper.say(self, name, message)
 Passes "say" command to minecraftserver with given message
 and inserts the senders username to the message
 
-:param name: Name of the sender
-:param message: Message to be sent
-:type name: string
-:type message: string
+
+-:param name: Name of the sender
+
+-:param message: Message to be sent
+
+-:type name: string
+
+-:type message: string
+
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.serverCommand">serverCommand</h3>
 
@@ -52,8 +62,11 @@ ATTENTION the server naturally has OP-level access to the commandline.
 if "say" command is used the MinecraftWrapper.say(self, name ,message)
 method is used to insert Username to message
 
-:param name: Username of the command issuer
-:param command: Command to be issued
+
+-:param name: Username of the command issuer
+
+-:param command: Command to be issued
+
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.isAValidMessage">isAValidMessage</h3>
 
@@ -62,9 +75,12 @@ MinecraftWrapper.isAValidMessage(self, line)
 ```
 
 Checks given line for expressions that are not for public
-:param line: Line to be checked
-:type line: string
-:returns: boolean
+
+-:param line: Line to be checked
+
+-:type line: string
+
+-:returns: boolean
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.formatLine">formatLine</h3>
 
@@ -74,11 +90,11 @@ MinecraftWrapper.formatLine(self, line)
 
 Cuts unwanted parts from given line.
 
-:param line: Line to be formatted
+-:param line: Line to be formatted
 
-:type line: string
+-:type line: string
 
-:returns string:
+-:returns string:
 
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.minecraft">minecraft</h3>
