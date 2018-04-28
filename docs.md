@@ -1,4 +1,3 @@
-init
 <h1 id="botSrc">botSrc</h1>
 
 
