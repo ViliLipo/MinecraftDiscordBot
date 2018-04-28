@@ -12,6 +12,10 @@ mc = minecraftWrapper.MinecraftWrapper()
 
 @client.event
 async def on_ready():
+    """
+    When the client has connected, starts minecraftserver and adds
+    its input and output to asyncio eventloop
+    """
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
@@ -21,6 +25,10 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    """
+    Messages from regular users are passed as /say commands and messages
+    from administrators are passed as server commands
+    """
     if(message.channel.name == "minecraft"
             and not message.author.name == client.user.name):
         if message.author.top_role.name == "Adminboi":
@@ -33,7 +41,10 @@ async def on_message(message):
 
 
 async def minecraftFunction():
-        print("hello")
+        """
+        Finds channel called minecraft and starts to feed server output
+        there.
+        """
         ch = False
         for ch in client.get_all_channels():
             if (ch.name == "minecraft") :
@@ -43,6 +54,11 @@ async def minecraftFunction():
             return
         async for line in mc.minecraft():
             await client.send_message(channel, line)
-        # await mc.cliInput()
-# print(sys.argv[1])
-client.run(os.environ['MINECRAFTTOKEN'])
+
+if __name__ == '__main__':
+    """
+    Grabs the Discord bot-user token from os enviroment variables.
+    On *nix systems use $ export MINECRAFTTOKEN=<"yourtoken">
+    to set it. then discord.client.run(token) is called
+    """
+    client.run(os.environ['MINECRAFTTOKEN'])
