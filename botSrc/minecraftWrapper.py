@@ -12,7 +12,6 @@ class MinecraftWrapper:
     """
 
     def __init__(self):
-        print("init")
         self.runningMc = "not born yet"
         self.serverIsOn = False
 
