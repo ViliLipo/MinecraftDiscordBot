@@ -1,4 +1,9 @@
-#! /usr/bin/python3
+"""
+Module contains MinecraftWrapper class.
+The class is used to run minecraft-server as a subprocess.
+"""
+
+# !/usr/bin/python3
 import subprocess
 import asyncio
 import sys
@@ -12,20 +17,21 @@ class MinecraftWrapper:
     """
 
     def __init__(self):
-        self.runningMc = "not born yet"
-        self.serverIsOn = False
         """
         DEFINE self.command and self.workpath so that this
         program finds your server.jar
         """
+        self.runningMc = "not born yet"
+        self.serverIsOn = False
+
         self.command = "java -Xmx1024M -Xms1024M -jar" +  \
             " /home/vili/Applications/Minecraft/server/server.jar nogui"
         self.workpath = "/home/vili/Applications/Minecraft/server/"
 
     async def execute(self, cmd, workdir):
         """
-        Executes given command in given workpath asynchronously.
-        Yields continuosly output as a string\n
+        Execute given command in given workpath asynchronously.
+        Yields continuosly output as a string.\n
         - :param cmd: Complete bash shell command string\n
         - :param workdir: Working directory for command\n
         - :type cmd: string\n
@@ -54,8 +60,8 @@ class MinecraftWrapper:
 
     async def say(self, name, message):
         """
-        Passes "say" command to minecraftserver with given message
-        and inserts the senders username to the message\n
+        Pass "say" command to minecraftserver with given message
+        and inserts the senders username to the message.\n
 
         - :param name: Name of the sender\n
         - :param message: Message to be sent\n
@@ -71,7 +77,7 @@ class MinecraftWrapper:
 
     async def serverCommand(self, name, command):
         """
-        Passses command given in parameters straight to the minecraftserver.
+        Pass command given in parameters straight to the minecraftserver.
         ATTENTION the server naturally has OP-level access to the commandline.
         if "say" command is used the MinecraftWrapper.say(self, name ,message)
         method is used to insert Username to message\n
@@ -89,7 +95,7 @@ class MinecraftWrapper:
 
     def isAValidMessage(self, line):
             """
-            Checks given line for expressions that are not for public\n
+            Check given line for expressions that are not for public\n
             - :param line: Line to be checked\n
             - :type line: string\n
             - :returns: boolean
@@ -104,7 +110,7 @@ class MinecraftWrapper:
 
     def formatLine(self, line):
         """
-        Cuts unwanted parts from given line. \n
+        Cut unwanted parts from given line. \n
         - :param line: Line to be formatted \n
         - :type line: string \n
         - :returns string: \n
@@ -132,7 +138,7 @@ class MinecraftWrapper:
 
     async def cliInput(self):
         """
-        Asynchronously polls  sys.stdin and passes the input lines to the
+        Asynchronously poll sys.stdin and passes the input lines to the
         minecraft-server-subprocess stdin.
         """
         while True:
@@ -148,7 +154,7 @@ class MinecraftWrapper:
 
     async def cliOutput(self):
             """
-            Runs MinecraftWrapper.minecraft(self) and prints its output to
+            Run MinecraftWrapper.minecraft(self) and prints its output to
             the terminal asynchronously
             """
             async for line in self.minecraft():

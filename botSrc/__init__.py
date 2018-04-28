@@ -1,4 +1,10 @@
-import bot
-import minecraftWrapper
+"""
+Package botSrc contains needed
+modules for MinecraftDiscordBot
+"""
 
-__all__ = ['bot', 'minecraftWrapper']
+import sys
+
+sys.path.append("./")
+
+__all__ = ["bot", "minecraftWrapper"]

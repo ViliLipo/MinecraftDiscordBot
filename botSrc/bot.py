@@ -1,4 +1,8 @@
-#!/usr/bin/python3
+"""
+bot module runs discordbot\n
+Is all fun and games
+"""
+# !/usr/bin/python3
 import sys
 sys.path.append("./")
 import discord
@@ -44,12 +48,12 @@ async def on_message(message):
 
 async def minecraftFunction():
         """
-        Finds channel called minecraft and starts to feed server output
+        Find channel called minecraft and starts to feed server output
         there.
         """
         ch = False
         for ch in client.get_all_channels():
-            if (ch.name == "minecraft") :
+            if (ch.name == "minecraft"):
                 channel = ch
         if not ch:
             print("No channel")
@@ -59,7 +63,7 @@ async def minecraftFunction():
 
 if __name__ == '__main__':
     """
-    Grabs the Discord bot-user token from os enviroment variables.
+    Grab the Discord bot-user token from os enviroment variables.
     On *nix systems use $ export MINECRAFTTOKEN=<"yourtoken">
     to set it. then discord.client.run(token) is called
     """

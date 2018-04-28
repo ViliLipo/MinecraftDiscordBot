@@ -1,8 +1,14 @@
 <h1 id="botSrc">botSrc</h1>
 
 
+Package botSrc contains needed
+modules for MinecraftDiscordBot
+
 <h1 id="botSrc.minecraftWrapper">botSrc.minecraftWrapper</h1>
 
+
+Module contains MinecraftWrapper class.
+The class is used to run minecraft-server as a subprocess.
 
 <h2 id="botSrc.minecraftWrapper.MinecraftWrapper">MinecraftWrapper</h2>
 
@@ -19,8 +25,8 @@ minecraftserver that is runned as a subprocess.
 MinecraftWrapper.execute(self, cmd, workdir)
 ```
 
-Executes given command in given workpath asynchronously.
-Yields continuosly output as a string
+Execute given command in given workpath asynchronously.
+Yields continuosly output as a string.
 
 - :param cmd: Complete bash shell command string
 
@@ -37,8 +43,8 @@ Yields continuosly output as a string
 MinecraftWrapper.say(self, name, message)
 ```
 
-Passes "say" command to minecraftserver with given message
-and inserts the senders username to the message
+Pass "say" command to minecraftserver with given message
+and inserts the senders username to the message.
 
 
 - :param name: Name of the sender
@@ -56,7 +62,7 @@ and inserts the senders username to the message
 MinecraftWrapper.serverCommand(self, name, command)
 ```
 
-Passses command given in parameters straight to the minecraftserver.
+Pass command given in parameters straight to the minecraftserver.
 ATTENTION the server naturally has OP-level access to the commandline.
 if "say" command is used the MinecraftWrapper.say(self, name ,message)
 method is used to insert Username to message
@@ -73,7 +79,7 @@ method is used to insert Username to message
 MinecraftWrapper.isAValidMessage(self, line)
 ```
 
-Checks given line for expressions that are not for public
+Check given line for expressions that are not for public
 
 - :param line: Line to be checked
 
@@ -87,7 +93,7 @@ Checks given line for expressions that are not for public
 MinecraftWrapper.formatLine(self, line)
 ```
 
-Cuts unwanted parts from given line.
+Cut unwanted parts from given line.
 
 - :param line: Line to be formatted
 
@@ -112,7 +118,7 @@ prints the unformatted form to console
 MinecraftWrapper.cliInput(self)
 ```
 
-Asynchronously polls  sys.stdin and passes the input lines to the
+Asynchronously poll sys.stdin and passes the input lines to the
 minecraft-server-subprocess stdin.
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.cliOutput">cliOutput</h3>
@@ -121,11 +127,15 @@ minecraft-server-subprocess stdin.
 MinecraftWrapper.cliOutput(self)
 ```
 
-Runs MinecraftWrapper.minecraft(self) and prints its output to
+Run MinecraftWrapper.minecraft(self) and prints its output to
 the terminal asynchronously
 
 <h1 id="botSrc.bot">botSrc.bot</h1>
 
+
+bot module runs discordbot
+
+Is all fun and games
 
 <h2 id="botSrc.bot.on_ready">on_ready</h2>
 
@@ -151,6 +161,6 @@ from administrators are passed as server commands
 minecraftFunction()
 ```
 
-Finds channel called minecraft and starts to feed server output
+Find channel called minecraft and starts to feed server output
 there.
 
