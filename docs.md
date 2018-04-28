@@ -23,13 +23,13 @@ MinecraftWrapper.execute(self, cmd, workdir)
 Executes given command in given workpath asynchronously.
 Yiels continuosly output as a string
 
--:param cmd: Complete bash shell command string
+- :param cmd: Complete bash shell command string
 
--:param workdir: Working directory for command
+- :param workdir: Working directory for command
 
--:type cmd: string
+- :type cmd: string
 
--:type workdir: string
+- :type workdir: string
 
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.say">say</h3>
@@ -42,13 +42,13 @@ Passes "say" command to minecraftserver with given message
 and inserts the senders username to the message
 
 
--:param name: Name of the sender
+- :param name: Name of the sender
 
--:param message: Message to be sent
+- :param message: Message to be sent
 
--:type name: string
+- :type name: string
 
--:type message: string
+- :type message: string
 
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.serverCommand">serverCommand</h3>
@@ -63,9 +63,9 @@ if "say" command is used the MinecraftWrapper.say(self, name ,message)
 method is used to insert Username to message
 
 
--:param name: Username of the command issuer
+- :param name: Username of the command issuer
 
--:param command: Command to be issued
+- :param command: Command to be issued
 
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.isAValidMessage">isAValidMessage</h3>
@@ -76,11 +76,11 @@ MinecraftWrapper.isAValidMessage(self, line)
 
 Checks given line for expressions that are not for public
 
--:param line: Line to be checked
+- :param line: Line to be checked
 
--:type line: string
+- :type line: string
 
--:returns: boolean
+- :returns: boolean
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.formatLine">formatLine</h3>
 
@@ -90,11 +90,11 @@ MinecraftWrapper.formatLine(self, line)
 
 Cuts unwanted parts from given line.
 
--:param line: Line to be formatted
+- :param line: Line to be formatted
 
--:type line: string
+- :type line: string
 
--:returns string:
+- :returns string:
 
 
 <h3 id="botSrc.minecraftWrapper.MinecraftWrapper.minecraft">minecraft</h3>
